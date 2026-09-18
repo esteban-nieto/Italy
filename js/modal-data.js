@@ -102,7 +102,7 @@ var MODAL_DATA = {
   "region-naples": {
     title: "Naples & Southern Italy",
     location: "Campania Region",
-    heroImage: "assets/images/pizza-naples.png",
+    heroImage: "assets/images/pizza-naples.jpg",
     paragraphs: [
       "The birthplace of authentic Neapolitan pizza, gateway to ancient Pompeii, Capri, and the breathtaking Amalfi Coast. Warm, energetic, and rich in culinary tradition.",
       "Savor warm sfogliatella pastries for breakfast, explore the ancient subterranean tunnels of Naples Underground, and sail across the Bay of Naples to Capri."
@@ -135,7 +135,7 @@ var MODAL_DATA = {
   pizza: {
     title: "Neapolitan Pizza Classic",
     location: "Naples, Campania",
-    heroImage: "assets/images/pizza-naples.png",
+    heroImage: "assets/images/pizza-naples.jpg",
     paragraphs: [
       "A soft, chewy crust baked at 485°C (900°F) in a wood-fired brick oven for just 60 to 90 seconds. Topped with sweet San Marzano tomatoes, creamy mozzarella di bufala, fresh basil, and extra virgin olive oil.",
       "Enjoyed folded 'a libretto' in a lively Neapolitan pizzeria, accompanied by a cold drink and passionate conversation."
@@ -146,7 +146,7 @@ var MODAL_DATA = {
   pasta: {
     title: "Homemade Tagliatelle",
     location: "Bologna, Emilia-Romagna",
-    heroImage: "assets/images/pasta-tagliatelle.png",
+    heroImage: "assets/images/pasta-tagliatelle.jpg",
     paragraphs: [
       "Silky golden ribbons of pasta kneaded by hand with soft wheat flour and farm-fresh eggs, rolled thin and tossed with slow-cooked Ragù alla Bolognese.",
       "Watch master pasta makers ('sfogline') roll egg dough paper-thin, preserving centuries of traditional Italian culinary craft."
@@ -157,7 +157,7 @@ var MODAL_DATA = {
   gelato: {
     title: "Artisan Gelato Flavors",
     location: "All over Italy",
-    heroImage: "assets/images/gelato-artisan.png",
+    heroImage: "assets/images/gelato-artisan.jpg",
     paragraphs: [
       "Creamier and richer than ordinary ice cream, churned slowly with fresh natural ingredients daily. Savor Bronte pistachio, dark chocolate, stracciatella, or sweet Amalfi lemon.",
       "Authentic 'gelato artigianale' uses lower milk fat and less air, serving flavors at the ideal temperature for maximum intensity."
@@ -168,7 +168,7 @@ var MODAL_DATA = {
   wine: {
     title: "Tuscan Vineyard Wines",
     location: "Tuscany",
-    heroImage: "assets/images/wine-vineyard.png",
+    heroImage: "assets/images/wine-vineyard.jpg",
     paragraphs: [
       "Chianti Classico, Brunello di Montalcino, and Super Tuscans crafted among cypress-lined rolling hills, olive groves, and historic stone wineries.",
       "Enjoy wine tastings overlooking golden Tuscan hills at sunset, paired with aged Pecorino Toscano cheese and cured meats."
@@ -179,7 +179,7 @@ var MODAL_DATA = {
   orchestra: {
     title: "Live Orchestra & Opera",
     location: "Milan & Venice",
-    heroImage: "assets/images/live-orchestra.png",
+    heroImage: "assets/images/live-orchestra.jpg",
     paragraphs: [
       "Red velvet opera boxes, shimmering crystal chandeliers, and world-renowned acoustics inside legendary opera houses such as Teatro alla Scala in Milan and Teatro La Fenice in Venice.",
       "Experience breathtaking live orchestral performances of Verdi, Puccini, and Rossini under the baton of world-class conductors."
@@ -190,7 +190,7 @@ var MODAL_DATA = {
   "opera-verona": {
     title: "Opera in Verona Arena",
     location: "Verona, Veneto",
-    heroImage: "assets/images/opera-verona.png",
+    heroImage: "assets/images/opera-verona.jpg",
     paragraphs: [
       "Dramatic open-air opera performances inside the 2,000-year-old Roman amphitheater Arena di Verona under a canopy of summer night stars.",
       "Thousands of candlelit lanterns illuminate the ancient stone tiers as grand choruses echo through the open Roman arena."
@@ -201,7 +201,7 @@ var MODAL_DATA = {
   violin: {
     title: "Timeless Violin Melodies",
     location: "Cremona, Lombardy",
-    heroImage: "assets/images/violin-melodies.png",
+    heroImage: "assets/images/violin-melodies.jpg",
     paragraphs: [
       "The historic birthplace of lutherie, where master luthiers continue to handcraft violins according to techniques perfected by Antonio Stradivari and Guarneri del Gesù 300 years ago.",
       "Listen to classical violin recitals, visit luthier workshops, and feel wood transform into pure acoustic emotion."
