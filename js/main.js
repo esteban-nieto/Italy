@@ -154,3 +154,50 @@
     }).observe(footer);
   }
 })();
+
+/* ========== PIZZA CUSTOM CURSOR ========== */
+(function () {
+  var cursor = document.createElement("div");
+  cursor.id = "pizza-cursor";
+  cursor.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+    <polygon points="20,2 38,38 2,38" fill="#F5C842" stroke="#C8860A" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M2,38 Q20,30 38,38" fill="#D4933A" stroke="#A0611A" stroke-width="1.2"/>
+    <polygon points="20,6 35,36 5,36" fill="#D94040"/>
+    <polygon points="20,10 33,35 7,35" fill="#F5D97E"/>
+    <circle cx="20" cy="20" r="4" fill="#C0392B"/><circle cx="20" cy="20" r="2.5" fill="#E74C3C"/>
+    <circle cx="13" cy="29" r="3.5" fill="#C0392B"/><circle cx="13" cy="29" r="2" fill="#E74C3C"/>
+    <circle cx="27" cy="29" r="3.5" fill="#C0392B"/><circle cx="27" cy="29" r="2" fill="#E74C3C"/>
+    <ellipse cx="17" cy="15" rx="2.5" ry="1.2" fill="#27AE60" transform="rotate(-30 17 15)"/>
+    <ellipse cx="24" cy="25" rx="2.5" ry="1.2" fill="#27AE60" transform="rotate(20 24 25)"/>
+  </svg>`;
+
+  Object.assign(cursor.style, {
+    position: "fixed",
+    top: "0",
+    left: "0",
+    width: "40px",
+    height: "40px",
+    pointerEvents: "none",
+    zIndex: "999999",
+    transform: "translate(-4px, -4px)",
+    transition: "transform 0.05s ease",
+    display: "none"
+  });
+
+  document.body.appendChild(cursor);
+
+  document.addEventListener("mousemove", function (e) {
+    cursor.style.display = "block";
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+  });
+
+  document.addEventListener("mouseleave", function () {
+    cursor.style.display = "none";
+  });
+
+  document.addEventListener("mouseenter", function () {
+    cursor.style.display = "block";
+  });
+})();
+
