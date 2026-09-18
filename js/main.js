@@ -179,8 +179,7 @@
     height: "40px",
     pointerEvents: "none",
     zIndex: "999999",
-    transform: "translate(-4px, -4px)",
-    transition: "transform 0.05s ease",
+    transform: "translate(-7px, -7px) rotate(-45deg)",
     display: "none"
   });
 
