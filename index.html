@@ -15,6 +15,14 @@
 <body>
   <a class="skip-link" href="#landmarks">Skip to content</a>
 
+  <!-- HIDDEN YOUTUBE MUSIC PLAYER -->
+  <div id="yt-player-container" aria-hidden="true" style="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;bottom:0;left:0;overflow:hidden;">
+    <div id="yt-player"></div>
+  </div>
+
+  <!-- MUSIC TOAST HINT -->
+  <div id="music-toast" aria-live="polite" style="display:none"></div>
+
   <!-- TOP HERO HEADER BANNER -->
   <header id="hero" class="hero-panoramic-header">
     <div class="hero-frame-wrapper">
@@ -363,5 +371,8 @@
   <script src="js/chatbot-data.js"></script>
   <script src="js/main.js"></script>
   <script src="js/explore-map.js"></script>
+  <script src="js/music.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
 </body>
 </html>
+

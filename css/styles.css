@@ -960,3 +960,48 @@ button {
     bottom: 12px;
   }
 }
+
+/* ========== MUSIC TOAST NOTIFICATION ========== */
+#music-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: linear-gradient(135deg, #1a1a2e 0%, #0B1F2A 100%);
+  color: #FAF7F2;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  white-space: nowrap;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+#music-toast::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--italy-green);
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  animation: pulse-dot 1.2s ease-in-out infinite;
+}
+#music-toast.music-toast-show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+#music-toast.music-toast-hide {
+  opacity: 0;
+  transform: translateX(-50%) translateY(20px);
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(1.5); }
+}
