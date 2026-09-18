@@ -207,7 +207,7 @@
     width: "40px",
     height: "40px",
     pointerEvents: "none",
-    zIndex: "999999",
+    zIndex: "2147483647",
     display: "none",
     willChange: "transform",
     transform: "translate3d(-100px, -100px, 0)"
