@@ -55,16 +55,27 @@ var MODAL_DATA = {
     funFact: "Amalfi lemons (Sfusato Amalfitano) are so sweet and aromatic that locals eat them sliced whole with fresh mint and sugar.",
     accentColor: "#E0A100"
   },
-  dolomites: {
-    title: "Alpine Peaks of the Dolomites",
-    location: "Dolomites, Trentino-Alto Adige",
-    heroImage: "assets/images/Dolomites  -unsplash.jpg",
+  pisa: {
+    title: "The Leaning Tower of Pisa",
+    location: "Pisa, Tuscany",
+    heroImage: "assets/images/Leaning Tower of Pisa.jpg",
     paragraphs: [
-      "Pale limestone mountains that glow vivid pink at sunrise and sunset — a natural phenomenon known as 'enrosadira'. Jagged rock towers rise above lush alpine meadows dotted with cozy mountain refuges.",
-      "Hike along scenic trails in summer, ski down pristine slopes in winter, and enjoy hearty South Tyrolean dumplings surrounded by 360-degree mountain peaks."
+      "Standing in the Square of Miracles, Pisa's world-famous freestanding bell tower is renowned for its iconic four-degree tilt, caused by an unstable foundation of soft soil and sand.",
+      "Construction began in 1173 and took nearly two centuries to complete. Visitors can climb its 251 spiral steps to enjoy panoramic views over the historic city of Pisa and the surrounding Tuscan landscape."
     ],
-    funFact: "The Dolomites are a UNESCO World Heritage site featuring 18 peaks rising above 3,000 meters and rich fossilized coral reefs from millions of years ago.",
-    accentColor: "#0D5C34"
+    funFact: "Galileo Galilei is said to have dropped two cannonballs of different masses from the Leaning Tower of Pisa to prove that speed of descent is independent of mass.",
+    accentColor: "#E0A100"
+  },
+  dolomites: {
+    title: "The Leaning Tower of Pisa",
+    location: "Pisa, Tuscany",
+    heroImage: "assets/images/Leaning Tower of Pisa.jpg",
+    paragraphs: [
+      "Standing in the Square of Miracles, Pisa's world-famous freestanding bell tower is renowned for its iconic four-degree tilt, caused by an unstable foundation of soft soil and sand.",
+      "Construction began in 1173 and took nearly two centuries to complete. Visitors can climb its 251 spiral steps to enjoy panoramic views over the historic city of Pisa and the surrounding Tuscan landscape."
+    ],
+    funFact: "Galileo Galilei is said to have dropped two cannonballs of different masses from the Leaning Tower of Pisa to prove that speed of descent is independent of mass.",
+    accentColor: "#E0A100"
   },
   "region-venice": {
     title: "Venice & the Veneto Region",
