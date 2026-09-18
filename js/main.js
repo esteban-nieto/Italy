@@ -160,15 +160,16 @@
   var cursor = document.createElement("div");
   cursor.id = "pizza-cursor";
   cursor.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
-    <polygon points="20,2 38,38 2,38" fill="#F5C842" stroke="#C8860A" stroke-width="1.5" stroke-linejoin="round"/>
-    <path d="M2,38 Q20,30 38,38" fill="#D4933A" stroke="#A0611A" stroke-width="1.2"/>
-    <polygon points="20,6 35,36 5,36" fill="#D94040"/>
-    <polygon points="20,10 33,35 7,35" fill="#F5D97E"/>
-    <circle cx="20" cy="20" r="4" fill="#C0392B"/><circle cx="20" cy="20" r="2.5" fill="#E74C3C"/>
-    <circle cx="13" cy="29" r="3.5" fill="#C0392B"/><circle cx="13" cy="29" r="2" fill="#E74C3C"/>
-    <circle cx="27" cy="29" r="3.5" fill="#C0392B"/><circle cx="27" cy="29" r="2" fill="#E74C3C"/>
-    <ellipse cx="17" cy="15" rx="2.5" ry="1.2" fill="#27AE60" transform="rotate(-30 17 15)"/>
-    <ellipse cx="24" cy="25" rx="2.5" ry="1.2" fill="#27AE60" transform="rotate(20 24 25)"/>
+    <!-- Tip at upper-left (3,3) → crust at bottom-right -->
+    <polygon points="3,3 38,7 7,38" fill="#F5C842" stroke="#C8860A" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M38,7 Q34,34 7,38" fill="#D4933A" stroke="#A0611A" stroke-width="3" stroke-linecap="round"/>
+    <polygon points="3,3 35,10 10,35" fill="#D94040"/>
+    <polygon points="3,3 30,14 14,30" fill="#F5D97E"/>
+    <circle cx="22" cy="18" r="4" fill="#C0392B"/><circle cx="22" cy="18" r="2.5" fill="#E74C3C"/>
+    <circle cx="14" cy="28" r="3.5" fill="#C0392B"/><circle cx="14" cy="28" r="2" fill="#E74C3C"/>
+    <circle cx="28" cy="26" r="3" fill="#C0392B"/><circle cx="28" cy="26" r="1.8" fill="#E74C3C"/>
+    <ellipse cx="18" cy="13" rx="2.5" ry="1.1" fill="#2ECC71" transform="rotate(45 18 13)"/>
+    <ellipse cx="25" cy="31" rx="2" ry="1" fill="#2ECC71" transform="rotate(-30 25 31)"/>
   </svg>`;
 
   Object.assign(cursor.style, {
@@ -179,7 +180,7 @@
     height: "40px",
     pointerEvents: "none",
     zIndex: "999999",
-    transform: "translate(-7px, -7px) rotate(-45deg)",
+    transform: "translate(-3px, -3px)",
     display: "none"
   });
 
