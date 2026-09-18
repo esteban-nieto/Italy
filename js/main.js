@@ -10,27 +10,45 @@
     if (!d) return;
     lastFocus = document.activeElement;
 
-    document.getElementById("modalAccent").style.background = d.accentColor || "#C46A3F";
+    var accent = document.getElementById("modalAccent");
+    if (accent) accent.style.background = d.accentColor || "#C46A3F";
+
     var mImg = document.getElementById("modalImg");
-    mImg.src = d.heroImage;
-    mImg.alt = d.title + " — " + d.location;
+    if (mImg) {
+      mImg.src = d.heroImage;
+      mImg.alt = d.title + " — " + d.location;
+    }
 
-    document.getElementById("modalTitle").textContent = d.title;
-    document.getElementById("modalLoc").textContent = d.location;
-    document.getElementById("modalP1").textContent = d.paragraphs[0];
-    document.getElementById("modalP2").textContent = d.paragraphs[1];
-    document.getElementById("modalFact").textContent = " " + d.funFact;
+    var mTitle = document.getElementById("modalTitle");
+    if (mTitle) mTitle.textContent = d.title;
 
-    overlay.hidden = false;
+    var mLoc = document.getElementById("modalLoc");
+    if (mLoc) mLoc.textContent = d.location;
+
+    var mP1 = document.getElementById("modalP1");
+    if (mP1) mP1.textContent = (d.paragraphs && d.paragraphs[0]) ? d.paragraphs[0] : "";
+
+    var mP2 = document.getElementById("modalP2");
+    if (mP2) mP2.textContent = (d.paragraphs && d.paragraphs[1]) ? d.paragraphs[1] : "";
+
+    var mFact = document.getElementById("modalFact");
+    if (mFact) mFact.textContent = " " + (d.funFact || "");
+
+    if (overlay) overlay.hidden = false;
     document.body.style.overflow = "hidden";
-    document.getElementById("modalClose").focus();
+    var closeBtn = document.getElementById("modalClose");
+    if (closeBtn) closeBtn.focus();
   }
+
+  window.openModal = openModal;
 
   function closeModal() {
-    overlay.hidden = true;
+    if (overlay) overlay.hidden = true;
     document.body.style.overflow = "";
-    if (lastFocus) lastFocus.focus();
+    if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
   }
+
+  window.closeModal = closeModal;
 
   /* Event Listeners for Modals */
   document.addEventListener("click", function(e) {
