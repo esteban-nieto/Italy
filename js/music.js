@@ -31,6 +31,20 @@ function handleFirstInteraction() {
   document.addEventListener(evt, handleFirstInteraction, { passive: true, once: true });
 });
 
+/* Toggle play / pause music */
+function toggleMusic() {
+  if (!ytPlayer || typeof ytPlayer.getPlayerState !== 'function') return;
+  var state = ytPlayer.getPlayerState();
+  if (state === YT.PlayerState.PLAYING) {
+    ytPlayer.pauseVideo();
+    showMusicToast('⏸ Música pausada — 2 toques o tecla G para reanudar');
+  } else {
+    ytPlayer.playVideo();
+    musicStarted = true;
+    showMusicToast('▶ Música reanudada — 2 toques o tecla G para detener');
+  }
+}
+
 /* Called automatically by the YouTube IFrame API once loaded */
 function onYouTubeIframeAPIReady() {
   ytPlayer = new YT.Player('yt-player', {
@@ -58,7 +72,11 @@ function onYouTubeIframeAPIReady() {
           musicPlaying = true;
           musicStarted = true;
           if (!toastShown) {
-            showMusicToast('🎵 Música italiana sonando — presiona G para detenerla');
+            var isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            var hint = isTouch
+              ? '🎵 Música italiana sonando — 2 toques en pantalla para detenerla'
+              : '🎵 Música italiana sonando — presiona G para detenerla';
+            showMusicToast(hint);
             toastShown = true;
           }
         } else if (e.data === YT.PlayerState.PAUSED) {
@@ -75,17 +93,40 @@ function onYouTubeIframeAPIReady() {
 /* Toggle play / pause with G key */
 document.addEventListener('keydown', function (e) {
   if (e.key === 'g' || e.key === 'G') {
-    if (!ytPlayer || typeof ytPlayer.getPlayerState !== 'function') return;
-    if (ytPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
-      ytPlayer.pauseVideo();
-      showMusicToast('⏸ Música pausada — presiona G para reanudar');
-    } else {
-      ytPlayer.playVideo();
-      musicStarted = true;
-      showMusicToast('▶ Música reanudada — presiona G para detener');
-    }
+    toggleMusic();
   }
 });
+
+/* Double-tap gesture handler for mobile phones */
+var lastTapTime = 0;
+var lastTapX = 0;
+var lastTapY = 0;
+
+document.addEventListener('touchend', function (e) {
+  var target = e.target;
+  if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) {
+    return;
+  }
+
+  var currentTime = new Date().getTime();
+  var tapLength = currentTime - lastTapTime;
+
+  if (e.changedTouches && e.changedTouches.length > 0) {
+    var touch = e.changedTouches[0];
+    var deltaX = Math.abs(touch.clientX - lastTapX);
+    var deltaY = Math.abs(touch.clientY - lastTapY);
+
+    if (tapLength < 350 && tapLength > 0 && deltaX < 40 && deltaY < 40) {
+      toggleMusic();
+      lastTapTime = 0;
+      return;
+    }
+
+    lastTapTime = currentTime;
+    lastTapX = touch.clientX;
+    lastTapY = touch.clientY;
+  }
+}, { passive: true });
 
 /* ---- Toast notification helper ---- */
 function showMusicToast(msg) {
