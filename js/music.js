@@ -8,6 +8,28 @@
 var ytPlayer = null;
 var musicPlaying = false;
 var toastShown = false;
+var musicStarted = false;
+
+function tryStartMusic() {
+  if (musicStarted) return;
+  if (ytPlayer && typeof ytPlayer.playVideo === 'function') {
+    try {
+      ytPlayer.playVideo();
+    } catch (err) {
+      /* Browser autoplay block fallback */
+    }
+  }
+}
+
+function handleFirstInteraction() {
+  if (musicStarted) return;
+  tryStartMusic();
+}
+
+/* Listen for any initial user interaction to unlock audio playback immediately on page open */
+['mousemove', 'pointermove', 'touchstart', 'scroll', 'click', 'keydown'].forEach(function (evt) {
+  document.addEventListener(evt, handleFirstInteraction, { passive: true, once: true });
+});
 
 /* Called automatically by the YouTube IFrame API once loaded */
 function onYouTubeIframeAPIReady() {
@@ -29,11 +51,12 @@ function onYouTubeIframeAPIReady() {
     events: {
       onReady: function (e) {
         e.target.setVolume(60);
-        e.target.playVideo();
+        tryStartMusic();
       },
       onStateChange: function (e) {
         if (e.data === YT.PlayerState.PLAYING) {
           musicPlaying = true;
+          musicStarted = true;
           if (!toastShown) {
             showMusicToast('🎵 Música italiana sonando — presiona G para detenerla');
             toastShown = true;
@@ -58,6 +81,7 @@ document.addEventListener('keydown', function (e) {
       showMusicToast('⏸ Música pausada — presiona G para reanudar');
     } else {
       ytPlayer.playVideo();
+      musicStarted = true;
       showMusicToast('▶ Música reanudada — presiona G para detener');
     }
   }

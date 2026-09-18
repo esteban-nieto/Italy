@@ -160,16 +160,26 @@
   var cursor = document.createElement("div");
   cursor.id = "pizza-cursor";
   cursor.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
-    <!-- Tip at upper-left (3,3) → crust at bottom-right -->
-    <polygon points="3,3 38,7 7,38" fill="#F5C842" stroke="#C8860A" stroke-width="1.5" stroke-linejoin="round"/>
-    <path d="M38,7 Q34,34 7,38" fill="#D4933A" stroke="#A0611A" stroke-width="3" stroke-linecap="round"/>
-    <polygon points="3,3 35,10 10,35" fill="#D94040"/>
-    <polygon points="3,3 30,14 14,30" fill="#F5D97E"/>
-    <circle cx="22" cy="18" r="4" fill="#C0392B"/><circle cx="22" cy="18" r="2.5" fill="#E74C3C"/>
-    <circle cx="14" cy="28" r="3.5" fill="#C0392B"/><circle cx="14" cy="28" r="2" fill="#E74C3C"/>
-    <circle cx="28" cy="26" r="3" fill="#C0392B"/><circle cx="28" cy="26" r="1.8" fill="#E74C3C"/>
-    <ellipse cx="18" cy="13" rx="2.5" ry="1.1" fill="#2ECC71" transform="rotate(45 18 13)"/>
-    <ellipse cx="25" cy="31" rx="2" ry="1" fill="#2ECC71" transform="rotate(-30 25 31)"/>
+    <!-- 1. Baked Crust Base -->
+    <path d="M 3,3 L 38,8 Q 36,36 8,38 Z" fill="#D48C28" stroke="#8C4E00" stroke-width="1.2" stroke-linejoin="round"/>
+    <!-- 2. Crust Ridge Detail -->
+    <path d="M 38,8 Q 36,36 8,38" fill="none" stroke="#A86209" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- 3. Tomato Sauce -->
+    <path d="M 3,3 L 34,8 Q 32,32 8,34 Z" fill="#D32F2F"/>
+    <!-- 4. Mozzarella Cheese Base -->
+    <path d="M 3,3 L 31,9 Q 29,29 9,31 Z" fill="#F7D358"/>
+    <!-- 5. Cheese Melt Highlight -->
+    <path d="M 3,3 L 26,10 Q 24,24 10,26 Z" fill="#FFF176" opacity="0.6"/>
+    <!-- 6. Pepperoni Slices -->
+    <circle cx="21" cy="15" r="3.5" fill="#B71C1C"/>
+    <circle cx="21" cy="15" r="2.2" fill="#E53935"/>
+    <circle cx="15" cy="21" r="3.5" fill="#B71C1C"/>
+    <circle cx="15" cy="21" r="2.2" fill="#E53935"/>
+    <circle cx="23" cy="23" r="3.2" fill="#B71C1C"/>
+    <circle cx="23" cy="23" r="2.0" fill="#E53935"/>
+    <!-- 7. Basil Leaves -->
+    <path d="M 14,10 C 12,8 16,7 18,10 C 16,12 12,12 14,10 Z" fill="#2E7D32"/>
+    <path d="M 19,27 C 17,25 21,24 23,27 C 21,29 17,29 19,27 Z" fill="#2E7D32"/>
   </svg>`;
 
   Object.assign(cursor.style, {
@@ -180,17 +190,32 @@
     height: "40px",
     pointerEvents: "none",
     zIndex: "999999",
-    transform: "translate(-3px, -3px)",
-    display: "none"
+    display: "none",
+    willChange: "transform",
+    transform: "translate3d(-100px, -100px, 0)"
   });
 
   document.body.appendChild(cursor);
 
+  var mouseX = -100, mouseY = -100;
+  var scheduled = false;
+
+  function updateCursor() {
+    cursor.style.transform = "translate3d(" + (mouseX - 3) + "px, " + (mouseY - 3) + "px, 0)";
+    scheduled = false;
+  }
+
   document.addEventListener("mousemove", function (e) {
-    cursor.style.display = "block";
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-  });
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (cursor.style.display !== "block") {
+      cursor.style.display = "block";
+    }
+    if (!scheduled) {
+      scheduled = true;
+      requestAnimationFrame(updateCursor);
+    }
+  }, { passive: true });
 
   document.addEventListener("mouseleave", function () {
     cursor.style.display = "none";

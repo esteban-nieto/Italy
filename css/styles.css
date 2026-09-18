@@ -26,7 +26,9 @@ html {
 }
 
 /* Custom pizza cursor — handled by JS, hide native cursor */
-* { cursor: none !important; }
+html, body, a, button, input, select, textarea, [role="button"], label, iframe, svg, img {
+  cursor: none !important;
+}
 
 body {
   font-family: 'Poppins', 'Montserrat', system-ui, sans-serif;
