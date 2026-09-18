@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Pizza slice body (triangle) -->
+  <polygon points="16,2 30,30 2,30" fill="#F5C842" stroke="#C8860A" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Crust (bottom arc) -->
+  <path d="M2,30 Q16,24 30,30" fill="#D4933A" stroke="#A0611A" stroke-width="1"/>
+  <!-- Tomato sauce layer -->
+  <polygon points="16,6 28,28 4,28" fill="#D94040"/>
+  <!-- Cheese layer -->
+  <polygon points="16,8 26,27 6,27" fill="#F5D97E"/>
+  <!-- Pepperoni 1 -->
+  <circle cx="16" cy="16" r="3" fill="#C0392B"/>
+  <circle cx="16" cy="16" r="2" fill="#E74C3C"/>
+  <!-- Pepperoni 2 -->
+  <circle cx="11" cy="22" r="2.5" fill="#C0392B"/>
+  <circle cx="11" cy="22" r="1.5" fill="#E74C3C"/>
+  <!-- Pepperoni 3 -->
+  <circle cx="21" cy="22" r="2.5" fill="#C0392B"/>
+  <circle cx="21" cy="22" r="1.5" fill="#E74C3C"/>
+  <!-- Basil leaf -->
+  <ellipse cx="13" cy="13" rx="2" ry="1" fill="#27AE60" transform="rotate(-30 13 13)"/>
+  <!-- Basil leaf 2 -->
+  <ellipse cx="19" cy="19" rx="2" ry="1" fill="#27AE60" transform="rotate(20 19 19)"/>
+  <!-- Cheese drips -->
+  <path d="M10,27 Q9,29 10,30" stroke="#F5D97E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M22,27 Q23,29 22,30" stroke="#F5D97E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+</svg>
