@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="420" viewBox="0 0 300 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .italy-green { fill: #008C45; }
+      .italy-white { fill: #FFFFFF; }
+      .italy-red { fill: #CD212A; }
+      .italy-outline { fill: none; stroke: #333; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- Italy shape with flag colors -->
+  <path class="italy-green" d="M150,10 L170,80 L140,150 L160,230 L130,300 L170,380 L150,420 L130,380 L110,300 L90,230 L110,150 L90,80 Z"/>
+  
+  <!-- Flag details - simplified representation -->
+  <path class="italy-white" d="M150,80 L160,100 L140,100 Z"/>
+  <path class="italy-red" d="M145,95 L155,105 L145,115 Z"/>
+  
+  <!-- Decorative regions/points for landmarks -->
+  <circle cx="170" cy="80" r="4" fill="#333"/>
+  <circle cx="140" cy="150" r="4" fill="#333"/>
+  <circle cx="160" cy="230" r="4" fill="#333"/>
+  <circle cx="130" cy="300" r="4" fill="#333"/>
+  <circle cx="170" cy="380" r="4" fill="#333"/>
+  
+  <!-- Decorative lines -->
+  <line x1="150" y1="10" x2="170" y2="80" stroke="#c46a3f" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="150" y1="80" x2="140" y2="150" stroke="#c46a3f" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="140" y1="150" x2="160" y2="230" stroke="#c46a3f" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="160" y1="230" x2="130" y2="300" stroke="#c46a3f" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="130" y1="300" x2="170" y2="380" stroke="#c46a3f" stroke-width="2" stroke-dasharray="4,4"/>
+  
+  <!-- Text labels -->
+  <text x="150" y="210" text-anchor="middle" font-family="Arial" font-size="14" fill="#333" font-weight="bold">ITALY</text>
+</svg>

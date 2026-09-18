@@ -1,0 +1,15 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g filter="url(#shadow)">
+    <rect width="64" height="64" rx="14" fill="#FFFFFF"/>
+    <!-- Italian Flag Vertical Tricolor -->
+    <path d="M0 14C0 6.26801 6.26801 0 14 0H21.3333V64H14C6.26801 64 0 57.732 0 50V14Z" fill="#008C45"/>
+    <rect x="21.3333" y="0" width="21.3333" height="64" fill="#FAF7F2"/>
+    <path d="M42.6667 0H50C57.732 0 64 6.26801 64 14V50C64 57.732 57.732 64 50 64H42.6667V0Z" fill="#CD212A"/>
+    <rect x="0.5" y="0.5" width="63" height="63" rx="13.5" stroke="#000000" stroke-opacity="0.12" stroke-width="1"/>
+  </g>
+  <defs>
+    <filter id="shadow" x="0" y="0" width="64" height="64" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+</svg>

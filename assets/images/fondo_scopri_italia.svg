@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1180" width="1280" height="1180">
+  <defs>
+    <linearGradient id="greenBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#087f4b"/>
+      <stop offset="1" stop-color="#00a65a"/>
+    </linearGradient>
+    <linearGradient id="redBg" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d71920"/>
+      <stop offset="1" stop-color="#ef3030"/>
+    </linearGradient>
+    <linearGradient id="navy" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#06232d"/>
+      <stop offset="1" stop-color="#031820"/>
+    </linearGradient>
+    <pattern id="mosaic" width="64" height="64" patternUnits="userSpaceOnUse">
+      <rect width="64" height="64" fill="#f1ead8"/>
+      <path d="M0 32L32 0L64 32L32 64Z" fill="#0b5961"/>
+      <path d="M0 32L32 0L32 11L11 32L32 53L32 64Z" fill="#d88b2b"/>
+      <path d="M64 32L32 0L32 11L53 32L32 53L32 64Z" fill="#b52c25"/>
+      <path d="M32 8L38 25L56 32L38 39L32 56L26 39L8 32L26 25Z" fill="#f4cf88"/>
+      <path d="M32 17L36 28L47 32L36 36L32 47L28 36L17 32L28 28Z" fill="#c83b2b"/>
+      <circle cx="32" cy="32" r="4" fill="#164953"/>
+    </pattern>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Clean base -->
+  <rect width="1280" height="1180" fill="#faf8f0"/>
+
+  <!-- Large Italian green background sweep -->
+  <path d="M0 0H1280
+           C1130 35 1025 88 910 150
+           C730 246 585 335 400 380
+           C235 420 100 430 0 515Z"
+        fill="url(#greenBg)"/>
+  <path d="M0 0H1280
+           C1080 75 930 145 760 238
+           C560 348 365 418 160 425
+           C95 428 43 447 0 475Z"
+        fill="#07864e" opacity=".38"/>
+
+  <!-- Green left/bottom brush area -->
+  <path d="M0 330
+           C120 390 190 455 205 555
+           C220 665 120 760 0 820Z"
+        fill="#087f4b"/>
+  <path d="M0 535
+           C75 570 128 632 125 700
+           C122 770 62 817 0 850Z"
+        fill="#12a05b" opacity=".75"/>
+
+  <!-- White central paper-like field -->
+  <path d="M0 390
+           C180 440 325 455 505 423
+           C720 385 890 310 1050 350
+           C1160 377 1225 430 1280 475
+           V1015
+           C1110 1065 935 1085 760 1062
+           C545 1035 340 1088 165 1050
+           C92 1035 38 1015 0 995Z"
+        fill="#fffdf7"/>
+
+  <!-- Red right and bottom sweep -->
+  <path d="M1280 455
+           C1190 500 1120 570 1085 665
+           C1055 745 1080 850 1145 915
+           C1180 950 1225 980 1280 1000Z"
+        fill="url(#redBg)"/>
+  <path d="M1280 545
+           C1190 625 1170 730 1195 825
+           C1210 885 1245 925 1280 945Z"
+        fill="#c9141d" opacity=".55"/>
+
+  <path d="M440 1180
+           C575 1100 690 1055 820 1040
+           C970 1022 1125 1045 1280 1010
+           V1180Z"
+        fill="url(#redBg)"/>
+  <path d="M610 1180
+           C760 1090 925 1060 1080 1075
+           C1150 1082 1215 1095 1280 1080V1180Z"
+        fill="#c9141d" opacity=".38"/>
+
+  <!-- Small Italian brush strokes -->
+  <path d="M0 880 C110 850 190 855 285 900 L245 930 C155 895 85 900 0 925Z"
+        fill="#0b874f"/>
+  <path d="M1010 270 C1100 250 1190 265 1280 300 L1260 335 C1175 305 1090 300 1015 320Z"
+        fill="#d71920"/>
+
+  <!-- Decorative confetti -->
+  <g opacity=".95">
+    <circle cx="115" cy="110" r="4" fill="#fff"/>
+    <circle cx="180" cy="160" r="3" fill="#e31b23"/>
+    <circle cx="250" cy="92" r="5" fill="#fff"/>
+    <circle cx="1060" cy="80" r="4" fill="#d71920"/>
+    <circle cx="1110" cy="135" r="3" fill="#fff"/>
+    <circle cx="1190" cy="100" r="4" fill="#0a7f4b"/>
+    <circle cx="70" cy="555" r="4" fill="#d71920"/>
+    <circle cx="1150" cy="500" r="4" fill="#fff"/>
+    <circle cx="1210" cy="600" r="3" fill="#087f4b"/>
+    <circle cx="105" cy="940" r="4" fill="#d71920"/>
+    <circle cx="330" cy="1010" r="3" fill="#087f4b"/>
+    <circle cx="930" cy="1110" r="4" fill="#fff"/>
+  </g>
+
+  <g fill="#d71920">
+    <path d="M95 230l7 14 14 7-14 7-7 14-7-14-14-7 14-7z"/>
+    <path d="M1130 205l6 12 12 6-12 6-6 12-6-12-12-6 12-6z"/>
+    <path d="M1190 770l7 14 14 7-14 7-7 14-7-14-14-7 14-7z"/>
+  </g>
+  <g fill="#087f4b">
+    <path d="M310 145l5 10 10 5-10 5-5 10-5-10-10-5 10-5z"/>
+    <path d="M1040 330l6 12 12 6-12 6-6 12-6-12-12-6 12-6z"/>
+    <path d="M160 790l6 12 12 6-12 6-6 12-6-12-12-6 12-6z"/>
+  </g>
+  <g fill="#fff">
+    <path d="M55 355l10 18 18 10-18 10-10 18-10-18-18-10 18-10z"/>
+    <path d="M1230 410l9 17 17 9-17 9-9 17-9-17-17-9 17-9z"/>
+  </g>
+
+  <!-- Botanical lemon decoration at lower-left -->
+  <g transform="translate(0 770)">
+    <path d="M0 215 C45 150 72 85 105 0" fill="none" stroke="#165d31" stroke-width="9" stroke-linecap="round"/>
+    <path d="M42 150 C15 125 2 104 -8 75 C27 82 55 105 64 130Z" fill="#4d963c"/>
+    <path d="M70 105 C100 72 122 55 151 52 C135 87 109 108 78 119Z" fill="#3c8736"/>
+    <path d="M18 195 C-5 168 -25 154 -48 151 C-34 183 -8 205 22 211Z" fill="#65a843"/>
+    <ellipse cx="42" cy="102" rx="27" ry="20" transform="rotate(28 42 102)" fill="#f2c72b"/>
+    <ellipse cx="91" cy="71" rx="25" ry="19" transform="rotate(-18 91 71)" fill="#e9bd20"/>
+    <path d="M34 92l18 10" stroke="#d39b18" stroke-width="3"/>
+    <path d="M82 64l17 8" stroke="#d39b18" stroke-width="3"/>
+  </g>
+
+  <!-- Bottom dark footer background -->
+  <rect y="1112" width="1280" height="68" fill="url(#navy)"/>
+
+  <!-- Mosaic corner ornaments -->
+  <path d="M0 0H175L125 55L75 105L0 150Z" fill="url(#mosaic)"/>
+  <path d="M1280 0H1105L1155 55L1205 105L1280 150Z" fill="url(#mosaic)"/>
+  <path d="M0 1112H165L120 1145L75 1180H0Z" fill="url(#mosaic)"/>
+  <path d="M1280 1112H1115L1160 1145L1205 1180H1280Z" fill="url(#mosaic)"/>
+
+  <!-- Tiny decorative dots near mosaic corners -->
+  <g fill="#d71920">
+    <circle cx="145" cy="92" r="3"/><circle cx="164" cy="110" r="2"/>
+    <circle cx="1135" cy="92" r="3"/><circle cx="1117" cy="112" r="2"/>
+  </g>
+  <g fill="#087f4b">
+    <circle cx="155" cy="75" r="2"/><circle cx="1125" cy="75" r="2"/>
+  </g>
+</svg>

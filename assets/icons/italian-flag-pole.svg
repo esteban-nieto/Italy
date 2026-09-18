@@ -1,0 +1,27 @@
+<svg width="120" height="140" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Flag Pole -->
+  <rect x="14" y="10" width="5" height="125" rx="2.5" fill="url(#poleGrad)"/>
+  <circle cx="16.5" cy="10" r="7" fill="url(#goldGrad)"/>
+  
+  <!-- Waving Flag -->
+  <g filter="url(#flagShadow)">
+    <path d="M19 22 C40 16, 60 26, 80 20 C95 16, 105 22, 115 20 L115 70 C105 72, 95 66, 80 70 C60 76, 40 66, 19 72 Z" fill="#009246"/>
+    <path d="M51 22 C62 20, 70 24, 83 20 L83 70 C70 74, 62 70, 51 72 Z" fill="#F4F5F0"/>
+    <path d="M83 20 C95 16, 105 22, 115 20 L115 70 C105 72, 95 66, 83 70 Z" fill="#CE2B37"/>
+  </g>
+
+  <defs>
+    <linearGradient id="poleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8A959E"/>
+      <stop offset="50%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFE066"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+    <filter id="flagShadow" x="10" y="10" width="115" height="75" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+</svg>

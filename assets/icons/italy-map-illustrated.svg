@@ -1,0 +1,82 @@
+<svg width="420" height="520" viewBox="0 0 420 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Flag Gradients -->
+    <linearGradient id="italyGreenGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#008C45"/>
+      <stop offset="100%" stop-color="#1B5E20"/>
+    </linearGradient>
+    <linearGradient id="italyWhiteGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F1F8E9"/>
+    </linearGradient>
+    <linearGradient id="italyRedGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#CD212A"/>
+      <stop offset="100%" stop-color="#B71C1C"/>
+    </linearGradient>
+    <linearGradient id="sardiniaGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FB8C00"/>
+      <stop offset="100%" stop-color="#F57C00"/>
+    </linearGradient>
+    <linearGradient id="sicilyGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E53935"/>
+      <stop offset="100%" stop-color="#C62828"/>
+    </linearGradient>
+    
+    <filter id="mapShadow" x="0" y="0" width="420" height="520" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#mapShadow)">
+    <!-- Mainland North (Green) -->
+    <path d="M 120 40 
+             C 140 25, 200 15, 260 40 
+             C 280 50, 310 65, 330 90 
+             C 320 110, 290 120, 270 125 
+             C 240 130, 200 135, 170 130 
+             C 140 125, 110 120, 90 95 
+             C 80 80, 95 55, 120 40 Z" 
+          fill="url(#italyGreenGrad)" stroke="#0E4720" stroke-width="3"/>
+          
+    <!-- Mainland Center (White / Ivory) -->
+    <path d="M 170 130 
+             C 200 135, 240 130, 270 125 
+             C 285 140, 295 165, 305 195 
+             C 280 215, 260 235, 240 255 
+             C 220 240, 205 210, 190 185 
+             C 175 160, 165 145, 170 130 Z" 
+          fill="url(#italyWhiteGrad)" stroke="#C8D6C9" stroke-width="3"/>
+
+    <!-- Mainland South (Red Boot) -->
+    <path d="M 240 255 
+             C 260 235, 280 215, 305 195 
+             C 325 235, 345 285, 365 330 
+             C 385 350, 400 360, 390 375 
+             C 370 385, 350 380, 340 365 
+             C 335 350, 325 340, 315 345 
+             C 295 365, 280 395, 275 420 
+             C 260 415, 245 400, 240 380 
+             C 255 350, 260 310, 245 280 
+             C 240 270, 235 260, 240 255 Z" 
+          fill="url(#italyRedGrad)" stroke="#801010" stroke-width="3"/>
+
+    <!-- Sardinia Island -->
+    <path d="M 75 220 
+             C 90 220, 105 230, 110 250 
+             C 115 280, 110 310, 105 330 
+             C 95 345, 75 345, 65 335 
+             C 60 310, 55 280, 60 250 
+             C 65 230, 70 220, 75 220 Z" 
+          fill="url(#sardiniaGrad)" stroke="#E65100" stroke-width="3"/>
+
+    <!-- Sicily Island -->
+    <path d="M 210 420 
+             C 240 405, 270 415, 285 435 
+             C 275 460, 245 470, 215 465 
+             C 195 450, 185 435, 210 420 Z" 
+          fill="url(#sicilyGrad)" stroke="#B71C1C" stroke-width="3"/>
+
+    <!-- Dashed Route Lines connecting cities -->
+    <path d="M 265 95 Q 230 145 215 175 T 255 270 T 275 360" fill="none" stroke="#E65100" stroke-width="2.5" stroke-dasharray="5 5"/>
+  </g>
+</svg>

@@ -1,0 +1,958 @@
+/* SCOPRI L'ITALIA — EXACT POSTER DESIGN SYSTEM */
+
+:root {
+  --italy-green: #008C45;
+  --italy-white: #FAF7F2;
+  --italy-red: #CD212A;
+  --gold: #D4AF37;
+  --dark-navy: #0B1F2A;
+  --ink: #1C2833;
+  --terracotta: #C46A3F;
+  --cream-paper: #FAF6F0;
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --hover-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+  --radius-card: 16px;
+  --radius-pill: 999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', 'Montserrat', system-ui, sans-serif;
+  background-color: var(--cream-paper);
+  color: var(--ink);
+  line-height: 1.5;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* GPU Hardware Accelerated Fixed Background Layer (Fixes Scroll Stutter) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../assets/images/Fondo actualizado.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  z-index: -10;
+  pointer-events: none;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', 'Montserrat', serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 200;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* ==================== HERO PANORAMIC HEADER WITH MARCO SUPERIOR ==================== */
+.hero-panoramic-header {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+}
+
+.hero-frame-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+  background: #2C1810;
+}
+
+.colosseum-panoramic-img {
+  width: 100%;
+  height: clamp(340px, 44vw, 560px);
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+
+.marco-superior-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Waving Flag Pole on Left */
+.flag-pole-img {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  width: clamp(75px, 9vw, 130px);
+  z-index: 20;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4));
+}
+
+/* Quote on Bottom Left */
+.hero-quote-left {
+  position: absolute;
+  bottom: 25px;
+  left: 35px;
+  max-width: 340px;
+  color: #FFFFFF;
+  font-style: italic;
+  font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+  line-height: 1.35;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 14px rgba(0, 0, 0, 0.95);
+  z-index: 20;
+}
+
+/* Headlines Overlay on Top Right Sky */
+.hero-text-overlay-right {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  text-align: right;
+  z-index: 20;
+  max-width: 620px;
+}
+
+.hero-3d-title {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -1px;
+  margin-bottom: 0.4rem;
+  white-space: nowrap;
+}
+
+.title-scopri {
+  color: #FFFFFF;
+  text-shadow: 
+    4px 4px 0 var(--italy-green),
+    -2px -2px 0 var(--italy-green),
+    2px -2px 0 var(--italy-green),
+    -2px 2px 0 var(--italy-green),
+    0 8px 24px rgba(0,0,0,0.6);
+  margin-right: 0.15em;
+}
+
+.title-litalia {
+  color: #FFFFFF;
+  text-shadow: 
+    4px 4px 0 var(--italy-red),
+    -2px -2px 0 var(--italy-green),
+    2px -2px 0 var(--italy-green),
+    -2px 2px 0 var(--italy-green),
+    0 8px 24px rgba(0,0,0,0.6);
+}
+
+.hero-poster-subtitle {
+  font-size: clamp(1.1rem, 2.4vw, 1.85rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.9), 0 0 14px rgba(0,0,0,0.85);
+  letter-spacing: 0.03em;
+  margin-top: 0.5rem;
+}
+
+.hero-poster-tagline {
+  font-size: clamp(1rem, 1.8vw, 1.45rem);
+  font-weight: 700;
+  color: #FAF7F2;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.9), 0 0 14px rgba(0,0,0,0.85);
+  margin-top: 0.2rem;
+}
+
+/* ==================== POSTER SECTIONS & CARDS ==================== */
+.poster-layout {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.poster-section {
+  position: relative;
+}
+
+/* Section Title Wrappers */
+.section-title-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.title-green-poster {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: var(--italy-green);
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.sparkles {
+  color: var(--italy-red);
+  font-size: 1.4rem;
+}
+
+.flag-stripe-underline {
+  height: 5px;
+  width: 240px;
+  margin: 0.2rem auto 1.8rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--italy-green) 0% 33%, #FFFFFF 33% 66%, var(--italy-red) 66% 100%);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+/* Card Grids */
+.card-grid {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.grid-4-col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-3-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Card Component */
+.card-poster {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: #FFF;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #FFF;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.card-poster:hover, .card-poster:focus-visible {
+  transform: translateY(-6px) scale(1.02) translateZ(0);
+  box-shadow: var(--hover-shadow);
+  outline: none;
+}
+
+.card-img-wrap {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.card-poster:hover .card-img-wrap img {
+  transform: scale(1.08);
+}
+
+/* Card Pill Badges */
+.card-pill-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFFFFF;
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+  white-space: nowrap;
+  max-width: 90%;
+}
+
+.card-pill-badge span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pin-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ==================== EXPLORE ITALY CENTERPIECE ==================== */
+.section-explore-center {
+  padding: 1rem 0;
+}
+
+.explore-3col-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr 240px;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.explore-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.title-red-explore {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 900;
+  color: var(--italy-red);
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.flourish-wing {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  border-top: 3px solid var(--italy-green);
+  border-radius: 50%;
+}
+
+.interactive-map-wrapper {
+  position: relative;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.italy-map-bg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.15));
+}
+
+.croquis-map {
+  border-radius: 16px;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+}
+
+/* Map Pins */
+.map-pin-badge {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -100%);
+  background: #FFFFFF;
+  border: 2px solid var(--italy-red);
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  transition: transform 0.2s ease, background 0.2s ease;
+  z-index: 10;
+}
+
+.map-pin-badge:hover {
+  transform: translate(-50%, -105%) scale(1.1);
+  background: #FFF7F7;
+  border-color: var(--italy-green);
+}
+
+.pin-mini-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.pin-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--italy-red);
+  display: inline-block;
+}
+
+.green-dot {
+  background: var(--italy-green);
+}
+
+/* Map Doodles */
+.map-doodle {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.doodle-lemon {
+  left: 2%;
+  top: 38%;
+}
+
+.doodle-wine {
+  right: 5%;
+  top: 25%;
+}
+
+.doodle-gondola {
+  left: 5%;
+  top: 12%;
+}
+
+/* Side Column Cards */
+.card-side {
+  height: 100%;
+}
+
+.card-side .card-img-wrap {
+  height: 320px;
+}
+
+/* ==================== GASTRONOMY & CULTURE/LANDSCAPES ==================== */
+.bottom-poster-sections {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.lemon-branch-decor {
+  position: absolute;
+  left: -45px;
+  top: 20px;
+  width: 110px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.title-icon-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 900;
+  margin-bottom: 1.2rem;
+}
+
+.title-green {
+  color: var(--italy-green);
+}
+
+.title-red {
+  color: var(--italy-red);
+}
+
+.title-svg {
+  width: 32px;
+  height: 32px;
+}
+
+.right-poster-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Vibrant Landscapes Teal Badge */
+.teal-badge-wrap {
+  margin-bottom: 1.2rem;
+}
+
+.teal-badge-title {
+  display: inline-block;
+  background: #0D5C34;
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  font-weight: 800;
+  padding: 0.45rem 1.6rem;
+  border-radius: var(--radius-pill);
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(13, 92, 52, 0.3);
+}
+
+.landscapes-grid .card-img-wrap {
+  height: 160px;
+}
+
+.gastronomy-grid .card-img-wrap {
+  height: 150px;
+}
+
+.culture-grid .card-img-wrap {
+  height: 150px;
+}
+
+/* ==================== FOOTER BANNER ==================== */
+.footer-banner {
+  position: relative;
+  background: linear-gradient(135deg, #0B1F2A 0%, #152C39 100%);
+  color: #FFFFFF;
+  padding: 0.9rem 1.2rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  overflow: hidden;
+  border-top: 3px solid var(--italy-red);
+}
+
+.footer-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--italy-green) 0% 33%, #FFFFFF 33% 66%, var(--italy-red) 66% 100%);
+}
+
+.mosaic-border-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.footer-banner-content h2 {
+  font-size: clamp(1.2rem, 2.2vw, 1.75rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.1rem;
+}
+
+.footer-subtext {
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-bottom: 0;
+}
+
+/* ==================== MODAL OVERLAY ==================== */
+.modal-overlay[hidden], .chat-window[hidden] {
+  display: none !important;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 31, 42, 0.75);
+  backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  z-index: 500;
+  animation: fadeIn 0.25s ease;
+}
+
+.modal {
+  position: relative;
+  background: var(--cream-paper);
+  border-radius: 20px;
+  max-width: 620px;
+  width: 100%;
+  max-height: 88vh;
+  overflow: auto;
+  animation: popIn 0.3s ease;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.94) translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+.modal-accent {
+  display: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(0, 0, 0, 0.65);
+  color: #FFF;
+  font-size: 1.5rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: var(--italy-red);
+}
+
+#modalImg {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  display: block;
+}
+
+.modal-body {
+  padding: 1.5rem 1.6rem 2rem;
+}
+
+.modal-body h3 {
+  font-size: 1.8rem;
+  color: var(--italy-green);
+  font-weight: 800;
+}
+
+.modal-loc {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--terracotta);
+  font-weight: 700;
+  margin: 0.3rem 0 1rem;
+}
+
+.modal-loc img {
+  width: 18px;
+  height: 18px;
+}
+
+.modal-body p {
+  margin-bottom: 0.8rem;
+  color: #2C3E50;
+  font-size: 0.95rem;
+}
+
+.funfact {
+  background: #FFF7E6;
+  border-left: 5px solid var(--gold);
+  border-radius: 0 12px 12px 0;
+  padding: 0.9rem 1rem;
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+}
+
+/* ==================== DAVINCI CHATBOT WIDGET ==================== */
+.chat-widget {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 400;
+  display: grid;
+  justify-items: end;
+  gap: 0.7rem;
+}
+
+.chat-toggle {
+  position: relative;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  animation: floatBounce 3s ease-in-out infinite;
+}
+
+@keyframes floatBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.chat-toggle img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #FFF;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  background: var(--gold);
+}
+
+.chat-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--italy-red);
+  border: 2px solid #FFF;
+}
+
+.chat-tooltip {
+  position: absolute;
+  right: 90px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #111;
+  color: #FFF;
+  font-size: 0.78rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.chat-toggle:hover .chat-tooltip {
+  opacity: 1;
+}
+
+.chat-window {
+  width: min(340px, calc(100vw - 48px));
+  height: 480px;
+  background: #FFF;
+  border-radius: 18px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: popIn 0.25s ease;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--italy-green);
+  color: #FFF;
+  padding: 0.75rem 0.9rem;
+}
+
+.chat-header img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #FFF;
+}
+
+.chat-header div {
+  display: grid;
+  line-height: 1.2;
+  flex: 1;
+}
+
+.chat-header small {
+  opacity: 0.85;
+  font-size: 0.72rem;
+}
+
+.chat-header button {
+  background: transparent;
+  border: 0;
+  color: #FFF;
+  font-size: 1.5rem;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: var(--italy-white);
+}
+
+.bubble {
+  max-width: 82%;
+  padding: 0.6rem 0.85rem;
+  border-radius: 14px;
+  font-size: 0.85rem;
+}
+
+.bubble.bot {
+  background: #FFF;
+  border: 1px solid #EAEAEA;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.bubble.bot img {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.bubble.user {
+  background: var(--terracotta);
+  color: #FFF;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.quick-replies {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0.8rem;
+  background: #FFF;
+  border-top: 1px solid #EEE;
+}
+
+.quick-replies button {
+  border: 1px solid var(--terracotta);
+  background: #FFF;
+  color: var(--terracotta);
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  padding: 0.3rem 0.7rem;
+  font-weight: 600;
+}
+
+.quick-replies button:hover {
+  background: var(--terracotta);
+  color: #FFF;
+}
+
+.chat-input {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.6rem;
+  background: #FFF;
+  border-top: 1px solid #EEE;
+}
+
+.chat-input input {
+  flex: 1;
+  border: 1px solid #DDD;
+  border-radius: var(--radius-pill);
+  padding: 0.55rem 0.9rem;
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.chat-input button {
+  border: 0;
+  background: var(--italy-green);
+  color: #FFF;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+/* ==================== RESPONSIVE BREAKPOINTS ==================== */
+@media (max-width: 1024px) {
+  .hero-poster-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-text-box {
+    text-align: center;
+    padding-right: 0;
+  }
+  .explore-3col-grid {
+    grid-template-columns: 1fr;
+  }
+  .col-left, .col-right {
+    display: flex;
+    justify-content: center;
+  }
+  .bottom-poster-sections {
+    grid-template-columns: 1fr;
+  }
+  .grid-4-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .social-buttons {
+    position: static;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  .mosaic-tile-img {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-4-col, .grid-3-col, .grid-2-col {
+    grid-template-columns: 1fr;
+  }
+  .flag-pole-img {
+    width: 70px;
+  }
+  .hero-3d-title {
+    font-size: 3.2rem;
+  }
+  .lemon-branch-decor {
+    display: none;
+  }
+  .chat-widget {
+    right: 12px;
+    bottom: 12px;
+  }
+}
